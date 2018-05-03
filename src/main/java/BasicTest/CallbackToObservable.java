@@ -1,9 +1,5 @@
 package BasicTest;
 
-import io.reactivex.Observable;
-import io.reactivex.subjects.PublishSubject;
-import twitter4j.*;
-
 public class CallbackToObservable {
     public static void main(String[] args) {
 
