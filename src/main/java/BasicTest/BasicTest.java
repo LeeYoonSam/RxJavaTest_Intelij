@@ -1,8 +1,5 @@
 package BasicTest;
 
-import io.reactivex.Observable;
-
-import static io.reactivex.Observable.empty;
 import static io.reactivex.Observable.just;
 
 public class BasicTest {
@@ -13,12 +10,11 @@ public class BasicTest {
         usingDoOnNext();
         System.out.println();
 
-        flatmapTest();
-        System.out.println();
+
     }
 
     static void quizObservable() {
-        just(8, 9 ,10)
+        just(8, 9, 10)
                 .filter(i -> i % 3 > 0)
                 .map(i -> "#" + i * 10)
                 .filter(s -> s.length() < 4)
@@ -46,21 +42,5 @@ public class BasicTest {
                 .doOnNext(s -> System.out.println("C: " + s))
                 .filter(s -> s.length() < 4)
                 .subscribe(s -> System.out.println("D: " + s));
-    }
-
-    static void flatmapTest() {
-        // map
-        just(1, 2, 3, 4, 5)
-                .map(x -> x * 2)
-                .filter(x -> x != 10)
-                .subscribe(System.out::println);
-
-        System.out.println();
-
-        // flatmap
-        just(1, 2, 3, 4, 5)
-                .flatMap(x -> just(x * 2))
-                .flatMap(x -> (x != 10) ? just(x) : empty())
-                .subscribe(System.out::println);
     }
 }
