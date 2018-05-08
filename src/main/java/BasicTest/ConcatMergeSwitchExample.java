@@ -1,7 +1,7 @@
 package BasicTest;
 
-import com.sun.tools.javac.util.Pair;
 import io.reactivex.Observable;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -140,8 +140,8 @@ public class ConcatMergeSwitchExample {
           */
         return words
                 .zipWith(absoluteDelay.startWith(0L), Pair::of)
-                .flatMap(pair -> just(pair.fst)
-                        .delay(pair.snd, TimeUnit.MILLISECONDS));
+                .flatMap(pair -> just(pair.getLeft())
+                        .delay(pair.getRight(), TimeUnit.MILLISECONDS));
     }
 
 }

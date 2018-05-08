@@ -3,13 +3,10 @@ package BasicTest;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 
-import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.net.CacheRequest;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 
 /**
  * 고수준 연산자
@@ -19,7 +16,7 @@ import java.util.concurrent.Callable;
  * 몇몇 연산자는 심지어 상태를 지니고 있기 때문에 순열을 처리하는 동안 상태를 관리
  * 이는 distint가 작동하는 방식으로서, 이미 처리한 값을 캐시하고 버린다.
  */
-public class HighLevelOperator {
+public class ScanCollectReduceExample {
     public static void main(String[] args) {
         scanTest();
 
