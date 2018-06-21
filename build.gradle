@@ -24,6 +24,14 @@ dependencies {
     compile 'io.vertx:vertx-rx-java2:3.5.1'
 
 
-    compile 'com.squareup.retrofit2:retrofit:2.4.0'
+    compile ('com.squareup.retrofit2:retrofit:2.4.0') {
+        exclude module: 'okhttp'
+    }
     compile 'com.squareup.retrofit2:converter-gson:2.4.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.4.0'
+
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+// logging-interceptor는 반환된 모든 응답에 대해 로그 문자열을 생성합니다.
+
 }

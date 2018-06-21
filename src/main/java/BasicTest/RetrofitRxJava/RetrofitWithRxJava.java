@@ -1,7 +1,5 @@
 package BasicTest.RetrofitRxJava;
 
-import java.io.IOException;
-
 /**
  * Integrating Retrofit with RxJava
  *
@@ -11,10 +9,13 @@ public class RetrofitWithRxJava {
     public static void main(String[] args) {
         GitHubBasicService gitHubService = new GitHubBasicService();
 
-        try {
-            System.out.println(gitHubService.getTopContributors("Google"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // Intergrating with RxJava
+        System.out.println(gitHubService.getTopContributors("Google"));
+
+//        try {
+//            System.out.println(gitHubService.getTopContributors("Google"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }
